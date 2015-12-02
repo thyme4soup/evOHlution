@@ -260,7 +260,7 @@ public class Organism implements Runnable {
 	
 	public void draw(Graphics g, double zoom, Rectangle view) {
 		if(edCounter > 0) g.setColor(Color.blue);
-		else if(food < metabolism * 20) g.setColor(Color.red);
+		else if(food < metabolism * 20 || lifetime < 0.05 * 20) g.setColor(Color.red);
 		else g.setColor(Color.black);
 		for(int i = 0; i < rotation.size(); i++) {
 			g.drawPolygon(getZoom(rotation.get(i), zoom, view));
@@ -470,5 +470,11 @@ public class Organism implements Runnable {
 			} catch (InterruptedException e) {}
 			updateMovement(panel.organisms, panel.dots);
 		}
+	}
+	
+	public String toString() {
+		String s = "";
+		s += "" + intelligence;
+		return s;
 	}
 }

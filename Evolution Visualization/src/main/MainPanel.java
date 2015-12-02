@@ -221,7 +221,10 @@ public class MainPanel extends Canvas implements Runnable, KeyListener, MouseWhe
 			}
 		}
 		private void checkQuota() {
-			if(panel.organisms.size() == 0) panel.addOrganism(panel.genOrg());
+			for(int i = 0; i < panel.organisms.size(); i++) {
+				if(panel.organisms.get(i).getSize() <= 5) return;
+			}
+			panel.addOrganism(panel.genOrg());
 		}
 	}
 	@Override

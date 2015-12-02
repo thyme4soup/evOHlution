@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 public class MainFrame {
 	public static final int BASE_UNIT = 10;
 	public static final int PANEL_LENGTH = 700;
-	public static final int ARENA_LENGTH = 2000;
+	public static final int ARENA_LENGTH = 4000;
 	
 	public static Polygon getRotation(Point center, Polygon p, double theta) {
 		Polygon rot = new Polygon();
@@ -41,7 +41,6 @@ public class MainFrame {
 			double theta = 0;
 			double baseTheta;
 			baseTheta = Math.atan(deltY / deltX);
-			
 			if(deltY < 0) {
 				if(deltX < 0) theta = baseTheta + Math.PI;
 				else if(deltX == 0) theta = 3 * Math.PI / 2;
